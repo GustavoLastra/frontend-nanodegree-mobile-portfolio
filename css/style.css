@@ -17,6 +17,7 @@ b, strong { font-weight: bold; }
 pre, code { font-family: monospace, monospace; font-size: 1em; }
 ul, ol { margin: 1em 0; padding: 0 0 0 20px; }
 img { border: 0; max-width: 100%; }
+.imgGus { width: 8%; }
 
 body { background: #fff; }
 header, footer, .container { max-width: 45em; margin: 0 auto; }
@@ -43,7 +44,3 @@ footer {
 footer span { float: right; font-style: italic; }
 
 /* Smartphones (portrait) */
-@media only screen and (max-width: 480px) {
-  body { font-size: 12px;}
-  header p { padding-left: 4.5em;}
-}
