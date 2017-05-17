@@ -5,6 +5,7 @@ Profile picture
 1.2 Minification: deleting comments and whitespaces.
 2. link to style with media= "print" so that it does not blocks
 3. Text compression with Gzip
+4. img minimized
 
 
 
