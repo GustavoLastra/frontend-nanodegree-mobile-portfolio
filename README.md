@@ -7,6 +7,8 @@ Profile picture
 3. Text compression with Gzip
 4. img minimized
 5. Convert binary to optimize PNG images.
+6. Open Sans asynchronously
+7. <link href="css/print.css" rel="stylesheet" media="print">
 
 
 
