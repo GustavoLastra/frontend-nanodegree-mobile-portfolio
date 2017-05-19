@@ -13,12 +13,28 @@
 
 <link href="css/print.css.gz" rel="stylesheet" media="print">
 <link href="css/onlyScreen.css.gz" rel="stylesheet" media="only screen and (max-width: 480px)">
-<script>
+  <script>
       (function(w,g){w['GoogleAnalyticsObject']=g;
       w[g]=w[g]||function(){(w[g].q=w[g].q||[]).push(arguments)};w[g].l=1*new Date();})(window,'ga');
       ga('create', 'UA-XXXX-Y');
       ga('send', 'pageview');
-    </script><script async src="http://www.google-analytics.com/analytics.js"></script><script async src="js/perfmatters.js"></script>
+    </script><script async src="http://www.google-analytics.com/analytics.js"></script>
+
+    <script>
+    // Measuring the Critical Rendering Path with Navigation Timing
+    // https://developers.google.com/web/fundamentals/performance/critical-rendering-path/measure-crp
+    function logCRP() {
+      var t = window.performance.timing,
+        dcl = t.domContentLoadedEventStart - t.domLoading,
+        complete = t.domComplete - t.domLoading;
+      var stats = document.getElementById("crp-stats");
+      stats.textContent = 'DCL: ' + dcl + 'ms, onload: ' + complete + 'ms';
+    }
+
+    window.addEventListener("load", function(event) {
+      logCRP();
+    });
+    </script>
 </head>
 <body style="margin:0;font-size:14px;line-height:1.61;font-weight:400;font-family:'Open Sans', sans-serif;color:#333;background:#fff;">
     <header style="max-width:45em;margin:0 auto;padding:0 0.5em;color:#C90B0B;"><a href="/" style="color: #12C;"><img class="imgGus" src="img/Gustavo-min.bin" style="border:0;max-width:100%;border-radius:40px;float:left;width:8%;"></a>
