@@ -1,5 +1,11 @@
-### What I changed
-Profile picture
+### First Part
+
+![Alt text](img/rubric1.png?raw=true "Optional Title")
+
+#### Problem
+
+![Alt text](img/beforeOne.png?raw=true "Optional Title")
+
 1. Data compression: Eliminating unnecessary data.
 1. Minification: deleting comments and whitespaces.
 3. Text compression with Gzip in js, css and html files.
@@ -7,19 +13,64 @@ Profile picture
 4. Images minimized
 5. Convert images to binary files.
 6. Open Sans asynchronously
-7. <link href="css/print.css" rel="stylesheet" media="print">
-8. Minimize main.js
-9.
 
-![Alt text](img/rubric1.png?raw=true "Optional Title")
+#### Result
+
+![Alt text](img/pageSpeedOne.png?raw=true "Optional Title")
+
+### Second Part
+
 ![Alt text](img/rubric2.png?raw=true "Optional Title")
+
+####Problem
+
+![Alt text](img/problem2.png?raw=true "Optional Title")
+
+1. Minimize main.js
+2. Code optimations
+
+```
+/ This for-loop actually creates and appends all of the pizzas when the page loads
+var randomPizzas = document.getElementById("randomPizzas");   ///////Heeeeeeeeereeeeeeeee
+
+for (var i = 2; i < 100; i++) {
+  var pizzasDiv = randomPizzas;
+  pizzasDiv.appendChild(pizzaElementGenerator(i));
+}
+```
+and
+
+```
+// Moves the sliding background pizzas based on scroll position
+function updatePositions() {
+  frame++;
+  window.performance.mark("mark_start_frame");
+
+  var items = document.querySelectorAll('.mover'); ////Heeeeeeereeeeeeeeee event scroll
+  var itemsLength = items.length;
+  var docScrollTop = document.body.scrollTop;
+
+
+  for (var i = 0; i < itemsLength; i++) {
+    var phase = Math.sin((docScrollTop / 1250) + (i % 5));
+    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+  }
+
+  // User Timing API to the rescue again. Seriously, it's worth learning.
+  // Super easy to create custom metrics.
+  window.performance.mark("mark_end_frame");
+  window.performance.measure("measure_frame_duration", "mark_start_frame", "mark_end_frame");
+  if (frame % 10 === 0) {
+    var timesToUpdatePosition = window.performance.getEntriesByName("measure_frame_duration");
+    logAverageFrame(timesToUpdatePosition);
+  }
+}
+
+```
+
+### Part 3
+
 ![Alt text](img/rubric3.png?raw=true "Optional Title")
-
-https://review.udacity.com/#!/rubrics/16/view
-
-https://www.myintervals.com/emogrifier.php
-
-https://review.udacity.com/#!/rubrics/16/view
 
 ```
 function changePizzaSizes(size) {
@@ -49,56 +100,23 @@ function changePizzaSizes(size) {
 }
 ```
 
+####Result
+![Alt text](img/after2and3.png?raw=true "Optional Title")
+
+Resize takes less than 5 ms
+
+![Alt text](img/less5.png?raw=true "Optional Title")
+
+
+###References
+
+1. [Rubric](https://review.udacity.com/#!/rubrics/16/view).
+2. [Css inliner](https://www.myintervals.com/emogrifier.php).
+2. [Google's Pagespeed tester](https://developers.google.com/speed/pagespeed/insights/).
 
 
 
-```
-
-/ This for-loop actually creates and appends all of the pizzas when the page loads
-var randomPizzas = document.getElementById("randomPizzas");   ///////Heeeeeeeeereeeeeeeee
-
-for (var i = 2; i < 100; i++) {
-  var pizzasDiv = randomPizzas;
-  pizzasDiv.appendChild(pizzaElementGenerator(i));
-}
-```
-
-asgrgadfgadfgadfgadfgadgfad
-```
-// Moves the sliding background pizzas based on scroll position
-function updatePositions() {
-  frame++;
-  window.performance.mark("mark_start_frame");
-
-  var items = document.querySelectorAll('.mover'); ////Heeeeeeereeeeeeeeee event scroll
-  var itemsLength = items.length;
-  var docScrollTop = document.body.scrollTop;
-
-
-  for (var i = 0; i < itemsLength; i++) {
-    var phase = Math.sin((docScrollTop / 1250) + (i % 5));
-    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
-  }
-
-  // User Timing API to the rescue again. Seriously, it's worth learning.
-  // Super easy to create custom metrics.
-  window.performance.mark("mark_end_frame");
-  window.performance.measure("measure_frame_duration", "mark_start_frame", "mark_end_frame");
-  if (frame % 10 === 0) {
-    var timesToUpdatePosition = window.performance.getEntriesByName("measure_frame_duration");
-    logAverageFrame(timesToUpdatePosition);
-  }
-}
-
-```
-
-
-
-
-
-
-
-
+# Instructions
 
 ## Website Performance Optimization portfolio project
 
