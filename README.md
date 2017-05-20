@@ -1,11 +1,11 @@
-### What I change
+### What I changed
 Profile picture
 1. Data compression: Eliminating unnecessary data.
 1. Minification: deleting comments and whitespaces.
+3. Text compression with Gzip in js, css and html files.
 2. link to style with media= "print" so that it does not blocks
-3. Text compression with Gzip
-4. img minimized
-5. Convert binary to optimize PNG images.
+4. Images minimized
+5. Convert images to binary files.
 6. Open Sans asynchronously
 7. <link href="css/print.css" rel="stylesheet" media="print">
 8. Minimize main.js
@@ -20,6 +20,81 @@ https://review.udacity.com/#!/rubrics/16/view
 https://www.myintervals.com/emogrifier.php
 
 https://review.udacity.com/#!/rubrics/16/view
+
+```
+function changePizzaSizes(size) {
+
+  var nwidth;
+  // Changes the slider value to a percent width
+    switch(size) {
+      case "1":
+        nwidth = 25;
+        break;
+      case "2":
+        nwidth = 33.33;
+        break;
+      case "3":
+        nwidth = 50;
+        break;
+      default:
+        console.log("bug in sizeSwitcher");
+    }
+
+  var randomPizzaContainer = document.querySelectorAll(".randomPizzaContainer");     //// Heeeeeeeeereeeeeeeee
+  var randomPizzaContainerLength = randomPizzaContainer.length;
+  for (var i = 0; i < randomPizzaContainerLength; i++) {
+    randomPizzaContainer[i].style.width = nwidth + "%";
+
+  }
+}
+```
+
+
+
+
+```
+
+/ This for-loop actually creates and appends all of the pizzas when the page loads
+var randomPizzas = document.getElementById("randomPizzas");   ///////Heeeeeeeeereeeeeeeee
+
+for (var i = 2; i < 100; i++) {
+  var pizzasDiv = randomPizzas;
+  pizzasDiv.appendChild(pizzaElementGenerator(i));
+}
+```
+
+asgrgadfgadfgadfgadfgadgfad
+```
+// Moves the sliding background pizzas based on scroll position
+function updatePositions() {
+  frame++;
+  window.performance.mark("mark_start_frame");
+
+  var items = document.querySelectorAll('.mover'); ////Heeeeeeereeeeeeeeee event scroll
+  var itemsLength = items.length;
+  var docScrollTop = document.body.scrollTop;
+
+
+  for (var i = 0; i < itemsLength; i++) {
+    var phase = Math.sin((docScrollTop / 1250) + (i % 5));
+    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+  }
+
+  // User Timing API to the rescue again. Seriously, it's worth learning.
+  // Super easy to create custom metrics.
+  window.performance.mark("mark_end_frame");
+  window.performance.measure("measure_frame_duration", "mark_start_frame", "mark_end_frame");
+  if (frame % 10 === 0) {
+    var timesToUpdatePosition = window.performance.getEntriesByName("measure_frame_duration");
+    logAverageFrame(timesToUpdatePosition);
+  }
+}
+
+```
+
+
+
+
 
 
 
