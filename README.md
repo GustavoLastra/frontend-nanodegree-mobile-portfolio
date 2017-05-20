@@ -1,3 +1,10 @@
+## How to test the Optimizations done on this project
+
+1. Go to [My Project](https://gustavolastra.github.io/frontend-nanodegree-mobile-portfolio/).
+2. Paste the links of a page from my project on [Google's Pagespeed tester](https://developers.google.com/speed/pagespeed/insights/).
+
+## What I did
+
 ### First Part
 
 ![Alt text](img/rubric1.png?raw=true "Optional Title")
@@ -68,8 +75,6 @@ function updatePositions() {
 
 ```
 
-### Part 3
-
 ![Alt text](img/rubric3.png?raw=true "Optional Title")
 
 ```
@@ -112,11 +117,11 @@ Resize takes less than 5 ms
 
 1. [Rubric](https://review.udacity.com/#!/rubrics/16/view).
 2. [Css inliner](https://www.myintervals.com/emogrifier.php).
-2. [Google's Pagespeed tester](https://developers.google.com/speed/pagespeed/insights/).
+3. [Google's Pagespeed tester](https://developers.google.com/speed/pagespeed/insights/).
 
 
 
-# Instructions
+# Instructions from Udacity
 
 ## Website Performance Optimization portfolio project
 
