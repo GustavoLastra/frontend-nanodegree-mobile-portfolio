@@ -29,7 +29,7 @@
 
 ![Alt text](img/rubric2.png?raw=true "Optional Title")
 
-####Problem
+#### Scroll Problem
 
 ![Alt text](img/problem2.png?raw=true "Optional Title")
 
@@ -38,7 +38,7 @@
 
 ```
 / This for-loop actually creates and appends all of the pizzas when the page loads
-var randomPizzas = document.getElementById("randomPizzas");   ///////Heeeeeeeeereeeeeeeee
+var randomPizzas = document.getElementById("randomPizzas");   //Here I add the search to a variable
 
 for (var i = 2; i < 100; i++) {
   var pizzasDiv = randomPizzas;
@@ -53,7 +53,7 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
-  var items = document.querySelectorAll('.mover'); ////Heeeeeeereeeeeeeeee event scroll
+  var items = document.querySelectorAll('.mover'); //Here I add the other searches to more variables
   var itemsLength = items.length;
   var docScrollTop = document.body.scrollTop;
 
@@ -74,14 +74,12 @@ function updatePositions() {
 }
 
 ```
-
-![Alt text](img/rubric3.png?raw=true "Optional Title")
-
+#### Resize Problem
 ```
 function changePizzaSizes(size) {
 
+ // Here I determine the propper new width depending on the slide position
   var nwidth;
-  // Changes the slider value to a percent width
     switch(size) {
       case "1":
         nwidth = 25;
@@ -96,7 +94,8 @@ function changePizzaSizes(size) {
         console.log("bug in sizeSwitcher");
     }
 
-  var randomPizzaContainer = document.querySelectorAll(".randomPizzaContainer");     //// Heeeeeeeeereeeeeeeee
+  var randomPizzaContainer = document.querySelectorAll(".randomPizzaContainer"); // Here I add another search to another variable.
+
   var randomPizzaContainerLength = randomPizzaContainer.length;
   for (var i = 0; i < randomPizzaContainerLength; i++) {
     randomPizzaContainer[i].style.width = nwidth + "%";
@@ -105,7 +104,7 @@ function changePizzaSizes(size) {
 }
 ```
 
-####Result
+#### Result
 ![Alt text](img/after2and3.png?raw=true "Optional Title")
 
 Resize takes less than 5 ms
@@ -113,7 +112,7 @@ Resize takes less than 5 ms
 ![Alt text](img/less5.png?raw=true "Optional Title")
 
 
-###References
+### References
 
 1. [Rubric](https://review.udacity.com/#!/rubrics/16/view).
 2. [Css inliner](https://www.myintervals.com/emogrifier.php).
