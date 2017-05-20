@@ -1,8 +1,7 @@
 ### What I change
 Profile picture
-1. Optimizing Encoding and Transfer Size of Text-Based Assets.
-1.1 Data compression: Eliminating unnecessary data.
-1.2 Minification: deleting comments and whitespaces.
+1. Data compression: Eliminating unnecessary data.
+1. Minification: deleting comments and whitespaces.
 2. link to style with media= "print" so that it does not blocks
 3. Text compression with Gzip
 4. img minimized
@@ -10,6 +9,18 @@ Profile picture
 6. Open Sans asynchronously
 7. <link href="css/print.css" rel="stylesheet" media="print">
 8. Minimize main.js
+9.
+
+![Alt text](img/rubric1.png?raw=true "Optional Title")
+![Alt text](img/rubric2.png?raw=true "Optional Title")
+![Alt text](img/rubric3.png?raw=true "Optional Title")
+
+https://review.udacity.com/#!/rubrics/16/view
+
+https://www.myintervals.com/emogrifier.php
+
+https://review.udacity.com/#!/rubrics/16/view
+
 
 
 
