@@ -424,7 +424,9 @@ var resizePizzas = function(size) {
           console.log("bug in sizeSwitcher");
       }
 
-    var randomPizzaContainer = document.querySelectorAll(".randomPizzaContainer");     //// Heeeeeeeeereeeeeeeee
+    /*var randomPizzaContainer = document.querySelectorAll(".randomPizzaContainer");  */   //// Heeeeeeeeereeeeeeeee
+    var randomPizzaContainer = document.getElementsByClassName('randomPizzaContainer');
+
     var randomPizzaContainerLength = randomPizzaContainer.length;
     for (var i = 0; i < randomPizzaContainerLength; i++) {
       randomPizzaContainer[i].style.width = nwidth + "%";
@@ -445,9 +447,8 @@ window.performance.mark("mark_start_generating"); // collect timing data
 
 // This for-loop actually creates and appends all of the pizzas when the page loads
 var randomPizzas = document.getElementById("randomPizzas");   ///////Heeeeeeeeereeeeeeeee
-
+var pizzasDiv = randomPizzas;
 for (var i = 2; i < 100; i++) {
-  var pizzasDiv = randomPizzas;
   pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
 
@@ -479,7 +480,9 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
-  var items = document.querySelectorAll('.mover'); ////Heeeeeeereeeeeeeeee event scroll
+
+  /*var items = document.querySelectorAll('.mover');*/ ////Heeeeeeereeeeeeeeee event scroll
+  var items = document.getElementsByClassName('mover');
   var itemsLength = items.length;
   var docScrollTop = document.body.scrollTop;
 
@@ -503,10 +506,22 @@ function updatePositions() {
 window.addEventListener('scroll', updatePositions);
 
 // Generates the sliding pizzas when the page loads.
-document.addEventListener('DOMContentLoaded', function() {
+function pizzasLoad() {
+
   var cols = 8;
   var s = 256;
-  for (var i = 0; i < 200; i++) {
+   var iHeight = window.screen.height;
+   var rows = iHeight/s;
+   var npizzas= rows* cols;
+   console.log("number of colums: ");
+   console.log(cols);
+   console.log("number of rows: ");
+   console.log(rows);
+   console.log("number of pizzas created: ");
+   console.log(npizzas);
+
+
+  for (var i = 0; i < npizzas; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza-min.bin";
@@ -517,4 +532,5 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector("#movingPizzas1").appendChild(elem);
   }
   updatePositions();
-});
+}
+pizzasLoad()
